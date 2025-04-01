@@ -60,7 +60,7 @@ class InsertDialog(QDialog):
         super().__init__()
         self.setWindowTitle("Insert Car Data")
         self.setFixedWidth(300)
-        self.setFixedHeight(400)  # Zwiększamy szerokość dla nowych pól
+        self.setFixedHeight(400)  
 
         layout = QVBoxLayout()
 
@@ -111,11 +111,11 @@ class InsertDialog(QDialog):
 
     def add_car(self):
         """Dodaj nowy samochód do bazy danych."""
-        marka = self.car_brand.currentText()  # Pobierz wybraną markę
-        model = self.model.currentText()  # Pobierz wybrany model
-        rocznik = self.findChild(QComboBox).currentText()  # Pobierz wybrany rok (z comboboxa 'year')
-        cena_za_dobe = self.price_per_day.text()  # Pobierz cenę za dobę
-        dostepny = self.available.currentText()  # Pobierz dostępność
+        marka = self.car_brand.currentText()  
+        model = self.model.currentText()  
+        rocznik = self.findChild(QComboBox).currentText()  #
+        cena_za_dobe = self.price_per_day.text()  
+        dostepny = self.available.currentText() 
 
         # Sprawdzenie, czy wszystkie pola są wypełnione
         if marka != "Select a brand..." and model != "Select a model..." and rocznik != "Select a year" \
@@ -166,6 +166,8 @@ class SearchDialog(QDialog):
                 main_window.table.item(item.row(),1).setSelected(True)
             cursor.close()
             connection.close()
+
+            
 app = QApplication(sys.argv)
 main_window = MainWindow()
 main_window.show()
